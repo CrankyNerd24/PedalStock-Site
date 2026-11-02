@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support · PedalStock</title>
+<meta name="description" content="Help with PedalStock: importing inventory, builds, shortages and contact.">
+<meta name="theme-color" content="#16161a">
+<link rel="icon" href="app-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="app-icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="app-icon.svg" alt="" width="40" height="40">PedalStock</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html#features">Features</a>
+      <a href="support.html" aria-current="page">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <h1>Support</h1>
+    <p>Have a question, found a bug, or want a feature? Email <span class="contact">SUPPORT_EMAIL</span> with your iPhone or iPad model and iOS version, and a screenshot if something looks wrong.</p>
+
+    <h2>How do I import my existing inventory?</h2>
+    <p>Export your spreadsheet as CSV (Numbers, Excel and Google Sheets all can), then in PedalStock go to <strong>Inventory → + → Import Inventory…</strong>. Only <code>name</code> and <code>category</code> columns are required. Other columns the app reads: <code>quantity</code>, <code>value</code>, <code>capacitance</code>, <code>capacitorType</code>, <code>voltageRating</code>, <code>lowStockThreshold</code>, <code>supplier</code>, <code>price</code>, <code>purchaseLink</code>, <code>commonlyUsed</code> and <code>notes</code>.</p>
+
+    <h2>How do I add a new order on top of what I have?</h2>
+    <p>Use an <code>addQuantity</code> column instead of <code>quantity</code>. Parts you already have get that many added; new ones are created. Parts are matched by name, or by category and value, so <code>10k</code> finds your "10kΩ Resistor".</p>
+
+    <h2>How do I turn a parts list into a build?</h2>
+    <p>On the Builds tab, tap <strong>+</strong> and choose <strong>Paste BOM…</strong>, <strong>Import Project…</strong> or <strong>Scan Schematic/Layout…</strong>. For a build you've already started, open it and use <strong>Import Parts From PDF or Image…</strong>. You'll see what was read before anything is imported.</p>
+
+    <h2>Why does a part show as short when the build looks covered?</h2>
+    <p>Build Shortages adds up every Planning and In Progress build at once. If two builds each need five of a part and you have eight, both rows look fine on their own but you're two short overall. Use the Build menu at the top of Build Shortages to see one pedal at a time.</p>
+
+    <h2>Is my data backed up?</h2>
+    <p>Your inventory and builds are stored on your device and included in your iPhone or iPad backup. They don't sync between devices.</p>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 PedalStock</span>
+    <nav aria-label="Footer"><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+  </div>
+</footer>
+</body>
+</html>
