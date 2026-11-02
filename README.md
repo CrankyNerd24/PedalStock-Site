@@ -7,3 +7,4 @@ The public marketing, support and privacy pages for PedalStock. Plain HTML and o
 - `privacy.html`: the App Store Connect Privacy Policy URL
 - `style.css`: colors and type from the PedalStock design system
 - `app-icon.svg`: the app icon, also the favicon
+- `CNAME`: serves the site at pedalstockapp.com
