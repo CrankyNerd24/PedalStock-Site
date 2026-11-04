@@ -155,3 +155,28 @@ h1 { font: 700 clamp(38px, 6vw, 60px)/1.04 var(--font-display); letter-spacing: 
   .cta { transition: transform 0.15s ease; }
   a.cta:hover { transform: translateY(-1px); }
 }
+
+/* User guide */
+.page h3 { font: 600 17px/1.35 var(--font-sans); color: var(--text-primary); margin: 26px 0 6px; }
+.page ul, .page ol { padding-left: 22px; }
+.page li { margin: 4px 0; }
+.page li::marker { color: var(--text-secondary); }
+.page h2[id], .page h3[id] { scroll-margin-top: 16px; }
+.toc { background: var(--surface); border: 1px solid var(--card-border); border-radius: var(--radius-card); padding: 16px 20px; margin: 24px 0 8px; }
+.toc strong { display: block; margin-bottom: 6px; }
+.toc ol { margin: 0; columns: 2 220px; column-gap: 28px; }
+.toc a { color: var(--text-primary); text-decoration: none; }
+.toc a:hover { color: var(--primary-accent); }
+.tag { display: inline-block; font: 600 11px/1 var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 7px; border-radius: 999px; vertical-align: 2px; margin-left: 6px; }
+.tag.app { color: var(--primary-accent); box-shadow: inset 0 0 0 1px var(--primary-accent); }
+.tag.web { color: var(--secondary-accent); box-shadow: inset 0 0 0 1px var(--secondary-accent); }
+.callout { border-left: 3px solid var(--primary-accent); background: var(--surface); border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 18px 0; }
+.callout p { margin: 0; }
+.table-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--card-border); border-radius: 12px; }
+.page table { border-collapse: collapse; width: 100%; font-size: 15px; }
+.page th, .page td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--card-border); vertical-align: top; color: var(--text-secondary); }
+.page th { color: var(--text-primary); font-weight: 600; background: var(--surface); }
+.page tr:last-child td { border-bottom: none; }
+.page pre.sample { font: 14px/1.5 var(--font-mono); color: var(--text-primary); background: #0f0f12; border: 1px solid var(--card-border); border-radius: 12px; padding: 12px 14px; overflow-x: auto; margin: 10px 0; }
+.back-top { font-size: 14px; }
+@media (max-width: 440px) { .site-nav { gap: 14px; } .site-nav a { font-size: 14px; } }
