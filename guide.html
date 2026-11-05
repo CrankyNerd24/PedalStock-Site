@@ -73,7 +73,7 @@
 
     <h3>Finding parts</h3>
     <p>Inventory is grouped by category. Every section starts collapsed: tap a heading to open it. Searching opens every section so no match is hidden. Search looks at names, and for capacitors at every unit, so <code>22nF</code> finds a part saved as <code>0.022uF</code>.</p>
-    <p>A <span style="color:var(--warning)">▲</span> next to a part means its quantity is at or below its threshold. Tap a part to see its details, the builds it's used in and, for capacitors, its <a href="#substitutes">substitutes</a>.</p>
+    <p>A <span style="color:var(--warning)">▲</span> next to a part means its quantity is at or below its threshold. Tap a part to see its details, the builds it's used in and, for capacitors, its <a href="#substitutes">substitutes</a>. Long lists have a back-to-top button at the bottom right.</p>
 
     <h3 id="import-inventory">Importing and exporting inventory</h3>
     <p>App: <strong>Inventory → + → Import Inventory…</strong> or <strong>Export Inventory…</strong>. Web: <strong>Import CSV…</strong> or <strong>Export CSV</strong>.</p>
@@ -140,7 +140,7 @@
       <li><strong>Tap the part's name</strong> (marked ⇄) to use a different part instead, such as a TL062 in place of a TL072. You can pick any part in inventory or create a new one, even if you have none in stock.</li>
       <li><strong>Remove</strong> it from the build: swipe left or touch and hold in the app, or tap ✕ on the web. Anything it took from inventory goes back.</li>
     </ul>
-    <p>To add parts, use <strong>Add Part</strong>, <strong>Paste More Parts…</strong> <span class="tag web">Web</span>, <strong>Add from Scan…</strong> <span class="tag web">Web</span> or <strong>Import Parts From PDF or Image…</strong> <span class="tag app">App</span>. Parts already in the build have their count raised instead of getting a second row. If a build ends up with the same part on two rows, the app offers <strong>Merge Duplicates</strong>.</p>
+    <p>To add parts, use <strong>Add Part</strong>, <strong>Paste More Parts…</strong> <span class="tag web">Web</span>, <strong>Add from Scan…</strong> <span class="tag web">Web</span> or <strong>Import Parts From PDF or Image…</strong> <span class="tag app">App</span>. Parts already in the build have their count raised instead of getting a second row. If a build ends up with the same part on two rows, a <strong>Merge Duplicates</strong> button appears above the parts list.</p>
     <h3>Progress</h3>
     <p>The progress bar counts installed parts and these stages: Parts gathered, Enclosure drilled, Enclosure painted / finished, Board populated, Off-board wiring (pots, jacks, switch, LED, power), Boxed up and Tested. Tick stages as you go.</p>
 
@@ -171,7 +171,7 @@
     <p>To order, share the shortage list from the app or use <strong>Copy Shopping List</strong> on the web. Tap a shortage to use a part you already have instead (see <a href="#substitutes">substitutes</a>).</p>
 
     <h2 id="substitutes">11. Substitutes</h2>
-    <p>When a part is short, PedalStock can suggest one you have that will do the job. For capacitors, that's the same value in an interchangeable type: box film, greenies and other film first for most values, and ceramic or silver mica first below 1nF. Electrolytic, tantalum and polarized caps are never swapped. A part's page in the app lists its substitutes, best first.</p>
+    <p>When a part is short, PedalStock can suggest one you have that will do the job. For capacitors, that's the same value in an interchangeable type: box film, greenies and other film first for most values, and ceramic or silver mica first below 1nF. Electrolytic, tantalum and polarized caps are never swapped. A short part on a build shows a one-tap <strong>Use … instead</strong> suggestion when you have enough of an interchangeable part, and a capacitor's part page lists its substitutes, best first.</p>
     <p>From Build Shortages, or by tapping a part's name on a build, you can pick any part as the replacement. That includes ICs and transistors (a TL062 for a TL072), parts you have none of, or a new part. You choose which builds the swap applies to, and a note is added to each build.</p>
 
     <h2 id="resources">12. Resources <span class="tag app">App</span></h2>
