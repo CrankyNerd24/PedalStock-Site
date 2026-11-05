@@ -1,0 +1,20 @@
+category,value,capacitance,capacitorType,voltageRating,quantity
+Resistor,1M,,,,2
+Resistor,10k,,,,1
+Resistor,4.7k,,,,3
+Resistor,470R,,,,1
+Capacitor,,100nF,Film Box,,2
+Capacitor,,47nF,Film Box,,1
+Capacitor,,220pF,Ceramic,,1
+Capacitor,,1uF,Film Box,,2
+Capacitor,,100uF,Electrolytic,25V,1
+Diode,1N914,,,,2
+Diode,1N5817,,,,1
+IC,TL072,,,,1
+Transistor,2N5088,,,,1
+Potentiometer,B500k,,,,1
+Potentiometer,B25k,,,,1
+Potentiometer,A100k,,,,1
+LED,3mm Red,,,,1
+Jack,1/4 Mono,,,,2
+Footswitch,3PDT,,,,1

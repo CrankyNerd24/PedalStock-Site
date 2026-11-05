@@ -45,7 +45,7 @@
         <li><a href="#substitutes">Substitutes</a></li>
         <li><a href="#resources">Resources</a></li>
         <li><a href="#moving">Backups and moving your data</a></li>
-        <li><a href="#formats">File and BOM formats</a></li>
+        <li><a href="#formats">File and BOM formats, and CSV templates</a></li>
       </ol>
     </nav>
 
@@ -78,7 +78,7 @@
     <h3 id="import-inventory">Importing and exporting inventory</h3>
     <p>App: <strong>Inventory → + → Import Inventory…</strong> or <strong>Export Inventory…</strong>. Web: <strong>Import CSV…</strong> or <strong>Export CSV</strong>.</p>
     <p>Import reads a CSV saved from Numbers, Excel or Google Sheets. Rows that match a part you already have update it, and the rest are added. Parts match by name, or by category and value. Only the columns in your file are changed: leave out <code>price</code> and existing prices stay as they are.</p>
-    <p>To add a new order on top of what you already have, use an <code>addQuantity</code> column instead of <code>quantity</code>. See <a href="#formats">file formats</a> for every column.</p>
+    <p>To add a new order on top of what you already have, use an <code>addQuantity</code> column instead of <code>quantity</code>. See <a href="#formats">file formats</a> for every column, or start from a <a href="#templates">CSV template</a>.</p>
 
     <h2 id="capacitors">3. Capacitors</h2>
     <p>Capacitor rows show the value in its most natural unit as the title, such as "22 nF Ceramic", with the same value in the other units underneath (<code>0.022 µF · 22000 pF</code>). They're sorted smallest first, then by voltage, so your 10µF electrolytics line up 16V, 25V, 50V.</p>
@@ -103,7 +103,7 @@
         <tr><td><strong>Paste BOM…</strong></td><td>A parts list copied from a forum post, build doc or web page, one part per line: <code>R1 10k</code>, <code>C3 100nF</code>, <code>Q1 2N3904 x2</code>.</td></tr>
         <tr><td><strong>Scan Schematic/Layout…</strong></td><td>A schematic, vero or stripboard layout, or kit build doc as an image, SVG or PDF. See <a href="#scanning">scanning</a>.</td></tr>
         <tr><td><strong>Import Project…</strong> <span class="tag app">App</span></td><td>A CSV BOM or a PedalStock project JSON file.</td></tr>
-        <tr><td><strong>Import Builds…</strong></td><td>A builds file from Export Builds, or a CSV BOM, which becomes a new build named after the file.</td></tr>
+        <tr><td><strong>Import Builds…</strong></td><td>A builds file from Export Builds, or a CSV BOM, which becomes a new build named after the file. See the <a href="#templates">BOM templates</a>.</td></tr>
       </tbody>
     </table></div>
     <p>Every part in the list is matched against your inventory. Parts you don't have are added to inventory with a quantity of 0, so they show up as shortages. Lines for the same part, such as <code>R1 10k</code> and <code>R4 10k</code>, are combined into one row with the total quantity.</p>
@@ -188,6 +188,15 @@
     <p>Importing the same builds file twice doesn't create copies: builds that are already there are skipped.</p>
 
     <h2 id="formats">14. File and BOM formats</h2>
+    <h3 id="templates">CSV templates</h3>
+    <p>Start from a template: download it, open it in Numbers, Excel or Google Sheets, replace the example rows with your own, and save or export it as CSV.</p>
+    <ul class="downloads">
+      <li><a href="templates/pedalstock-inventory-template.csv" download>Inventory template</a> <span class="dl-note">Every inventory column, with example parts. Use with Import Inventory… (app) or Import CSV… (web).</span></li>
+      <li><a href="templates/pedalstock-inventory-order-template.csv" download>Inventory order template</a> <span class="dl-note">Adds a new order on top of what you have, using <code>addQuantity</code>.</span></li>
+      <li><a href="templates/pedalstock-bom-template.csv" download>BOM template, PedalStock columns</a> <span class="dl-note">One row per part with category and quantity. Use with Import Builds… or Import Project….</span></li>
+      <li><a href="templates/pedalstock-bom-designator-template.csv" download>BOM template, by part label</a> <span class="dl-note">The usual Designator, Value, Qty layout, as many kits and design tools export it.</span></li>
+    </ul>
+    <p>A BOM import names the new build after the file, so rename the file to the pedal's name first, for example <code>Fuzz Face.csv</code>.</p>
     <h3>Inventory CSV</h3>
     <p>A header row is required. Column names aren't case-sensitive, and spaces and underscores are ignored.</p>
     <div class="table-wrap"><table>

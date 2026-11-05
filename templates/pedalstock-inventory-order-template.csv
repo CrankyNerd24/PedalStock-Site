@@ -1,0 +1,6 @@
+name,category,addQuantity,value,capacitance,capacitorType,voltageRating
+10k Resistor,Resistor,100,10k,,,
+100nF Film Box Capacitor,Capacitor,25,,100nF,Film Box,63V
+10uF Electrolytic Capacitor,Capacitor,20,,10uF,Electrolytic,25V
+TL072 IC,IC,5,TL072,,,
+2N5088 Transistor,Transistor,10,2N5088,,,

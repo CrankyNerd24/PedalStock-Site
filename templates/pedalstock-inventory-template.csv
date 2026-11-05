@@ -1,0 +1,17 @@
+name,category,quantity,value,capacitance,capacitorType,voltageRating,lowStockThreshold,commonlyUsed,supplier,price,purchaseLink,notes
+10k Resistor,Resistor,50,10k,,,,10,yes,Tayda,0.01,,1/4W metal film
+1M Resistor,Resistor,25,1M,,,,5,yes,Tayda,0.01,,
+100nF Film Box Capacitor,Capacitor,30,,100nF,Film Box,63V,10,yes,Tayda,0.06,,
+47nF Greenie Capacitor,Capacitor,10,,47nF,Greenie,100V,4,no,,,,
+220pF Ceramic Capacitor,Capacitor,20,,220pF,Ceramic,50V,5,no,,,,
+10uF Electrolytic Capacitor,Capacitor,15,,10uF,Electrolytic,25V,5,yes,Tayda,0.03,,
+100uF Electrolytic Capacitor,Capacitor,10,,100uF,Electrolytic,25V,3,yes,,,,Power filter
+2N3904 Transistor,Transistor,10,2N3904,,,,3,no,Tayda,0.03,,
+1N914 Diode,Diode,40,1N914,,,,10,yes,,,,
+1N5817 Diode,Diode,10,1N5817,,,,3,yes,,,,Reverse-polarity protection
+TL072 IC,IC,5,TL072,,,,2,yes,Tayda,0.25,,
+B100k Potentiometer,Potentiometer,6,B100k,,,,2,no,,,,16mm PCB mount
+3mm Red LED,LED,20,3mm Red,,,,5,yes,,,,
+1/4 Mono Jack,Jack,8,1/4 Mono,,,,4,yes,,,,Open frame
+3PDT Footswitch,Footswitch,4,3PDT,,,,2,yes,,,,
+125B Enclosure,Enclosure,3,125B,,,,1,no,,,,

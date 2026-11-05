@@ -180,3 +180,9 @@ h1 { font: 700 clamp(38px, 6vw, 60px)/1.04 var(--font-display); letter-spacing: 
 .page pre.sample { font: 14px/1.5 var(--font-mono); color: var(--text-primary); background: #0f0f12; border: 1px solid var(--card-border); border-radius: 12px; padding: 12px 14px; overflow-x: auto; margin: 10px 0; }
 .back-top { font-size: 14px; }
 @media (max-width: 440px) { .site-nav { gap: 14px; } .site-nav a { font-size: 14px; } }
+.page .downloads { list-style: none; padding: 0; display: grid; gap: 10px; margin: 14px 0; }
+.downloads li { background: var(--surface); border: 1px solid var(--card-border); border-radius: 12px; padding: 12px 14px; margin: 0; display: grid; gap: 2px; }
+.downloads a { color: var(--primary-accent); font-weight: 600; text-decoration: none; }
+.downloads a::before { content: "↓ "; }
+.downloads a:hover { text-decoration: underline; }
+.dl-note { font-size: 14px; color: var(--text-secondary); }
