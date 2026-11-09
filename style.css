@@ -4,8 +4,9 @@
   --background: #16161a;
   --surface: #232326;
   --card-border: #333336;
-  --primary-accent: #ff8c42;
-  --secondary-accent: #4ecdc4;
+  /* Theme colours. PCB Green is the default; [data-theme] below swaps in the others. */
+  --primary-accent: #3fcf8e;
+  --secondary-accent: #e9c46a;
   --warning: #ea604c;
   --text-primary: #ededed;
   --text-secondary: #9a9a9e;
@@ -16,6 +17,8 @@
   --radius-phone: 44px;
   color-scheme: dark;
 }
+:root[data-theme="sky"] { --primary-accent: #5bc0f8; --secondary-accent: #f5b04c; }
+:root[data-theme="deep"] { --primary-accent: #3d9cf0; --secondary-accent: #ffc145; }
 
 * { box-sizing: border-box; }
 html { background: var(--background); }
@@ -217,3 +220,12 @@ h1 { font: 700 clamp(38px, 6vw, 60px)/1.04 var(--font-display); letter-spacing: 
 /* Bullets on the web app page hold bold text and links, so they flow as text. */
 .wa-feature .points li { display: block; position: relative; padding-left: 30px; }
 .wa-feature .points li::before { position: absolute; left: 0; top: 0; }
+
+/* Theme picker in the footer (theme.js fills it in). */
+.theme-picker { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; flex-basis: 100%; }
+.theme-picker > span { font-size: 13px; color: var(--text-secondary); margin-right: 2px; }
+.theme-option { display: inline-flex; align-items: center; gap: 7px; background: none; border: 1px solid var(--card-border); border-radius: 999px; padding: 5px 11px 5px 6px; color: var(--text-secondary); font: 600 13px var(--font-sans); cursor: pointer; }
+.theme-option:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+.theme-option[aria-checked="true"] { color: var(--text-primary); border-color: var(--text-primary); }
+.theme-swatch { display: inline-flex; border-radius: 999px; overflow: hidden; width: 22px; height: 14px; }
+.theme-swatch i { flex: 1; }

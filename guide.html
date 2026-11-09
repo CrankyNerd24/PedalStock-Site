@@ -8,7 +8,8 @@
 <meta name="theme-color" content="#16161a">
 <link rel="icon" href="app-icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="app-icon.svg">
-<link rel="stylesheet" href="style.css?v=2026-11-09">
+<script>try{var t=localStorage.getItem('pedalstock.theme');if(t==='sky'||t==='deep')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="stylesheet" href="style.css?v=2026-11-10">
 </head>
 <body>
 <header class="site-header">
@@ -265,7 +266,9 @@ GAIN,B500k,1</pre>
   <div class="wrap">
     <span>© 2026 PedalStock</span>
     <nav aria-label="Footer"><a href="guide.html">Guide</a><a href="app/">Web App</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+    <div class="theme-picker" data-theme-picker></div>
   </div>
 </footer>
+<script src="theme.js" defer></script>
 </body>
 </html>
