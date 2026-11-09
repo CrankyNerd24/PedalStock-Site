@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Web App · PedalStock</title>
+<meta name="description" content="PedalStock in your browser: parts inventory, builds from pasted, CSV or scanned BOMs, build shortages, substitutions and a shopping list. Free, with optional sync.">
+<meta name="theme-color" content="#16161a">
+<link rel="icon" href="app-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="app-icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="app-icon.svg" alt="" width="40" height="40">PedalStock</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html#features">Features</a>
+      <a href="guide.html">Guide</a>
+      <a href="support.html">Support</a>
+      <a href="web-app.html" aria-current="page">Web App</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero perfboard wa-hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">PedalStock web app · Free</p>
+      <h1>Your pedal parts, in any browser.</h1>
+      <p class="lede">Track your inventory, turn a BOM into a build, and see exactly what to order, on any computer or phone. Nothing to install.</p>
+      <div class="cta-row">
+        <a class="cta" href="app/">Open the Web App</a>
+        <a class="cta cta-secondary" href="guide.html">Read the Guide</a>
+      </div>
+      <p class="cta-note" style="margin-top: 14px">Chrome, Safari, Edge and Firefox · Windows, Mac, Linux, iPhone and Android</p>
+    </div>
+    <figure class="shot browser">
+      <img src="images/web-app/build-top.webp" width="1100" height="720" alt="A PedalStock build in the web app: Electra Distortion, in progress, with its schematic attached and build stages ticked off.">
+    </figure>
+  </div>
+</section>
+
+<div class="features wrap" id="features">
+
+  <section class="feature wa-feature">
+    <div class="feature-text">
+      <h2>An inventory that knows its parts.</h2>
+      <p>Every part sorted into collapsible categories, each with its own little schematic symbol.</p>
+      <ul class="points">
+        <li>Capacitors show their value in pF, nF and µF, sorted by value then voltage. Search "22 nF" and find the part you saved as 0.022 µF.</li>
+        <li>"1K ohm", "1k" and "1k0" are the same resistor, so imports and checks match them.</li>
+        <li>Star the parts you always keep, set a low-stock level, and they show up on Low Stock when they run short.</li>
+        <li>Import a spreadsheet as CSV, or add a new order on top of what you have. <a href="#templates">Templates included.</a></li>
+      </ul>
+    </div>
+    <figure class="shot browser">
+      <img src="images/web-app/inventory.webp" width="1100" height="820" loading="lazy" alt="Inventory with categories and capacitor values in every unit.">
+    </figure>
+  </section>
+
+  <section class="feature wa-feature">
+    <div class="feature-text">
+      <h2>Catch the 10k you entered twice.</h2>
+      <p>Imports and scans can leave you with the same part twice. PedalStock spots them and lets you merge them in a couple of clicks.</p>
+      <ul class="points">
+        <li>Pick which part to keep: stock is added together and builds switch to the kept part.</li>
+        <li>A 16V and a 25V electrolytic, or a film and a ceramic, are never mistaken for duplicates.</li>
+        <li>Open any part to see which builds use it and, for capacitors, what you have that can stand in for it.</li>
+      </ul>
+    </div>
+    <div class="shot-pair">
+      <figure class="shot dialog"><img src="images/web-app/duplicates.webp" width="560" height="382" loading="lazy" alt="Possible Duplicates: 1k Resistor and 1K ohm Resistor, with Merge 2 Parts and Not Duplicates."></figure>
+      <figure class="shot dialog"><img src="images/web-app/part-details.webp" width="560" height="250" loading="lazy" alt="A capacitor's Used in list and its substitutes, best first."></figure>
+    </div>
+  </section>
+
+  <section class="feature wa-feature">
+    <div class="feature-text">
+      <h2>From schematic to build without typing.</h2>
+      <p>Start a build however the parts list reaches you.</p>
+      <ul class="points">
+        <li><strong>Paste a BOM</strong> from a forum thread or build doc: "R1 10k", "C3 100nF", "Q1 2N3904 x2".</li>
+        <li><strong>Import a CSV BOM</strong>, in PedalStock's columns or the usual Designator, Value, Qty layout.</li>
+        <li><strong>Scan a schematic or layout</strong> (image, SVG or PDF). Labels are paired with their values, pots named GAIN or TONE included, and you check everything before it's imported.</li>
+        <li>Everything is matched to your inventory, and the scanned file is kept with the build.</li>
+      </ul>
+    </div>
+    <figure class="shot dialog tall"><img src="images/web-app/scan-review.webp" width="560" height="530" loading="lazy" alt="Review Scan: labels R1 to R5 and C1 to C5 paired with values read from a schematic."></figure>
+  </section>
+
+  <section class="feature wa-feature">
+    <div class="feature-text">
+      <h2>Track the build as you solder.</h2>
+      <p>Tick a part as it goes on the board and it comes out of inventory then; untick it to put it back.</p>
+      <ul class="points">
+        <li>A progress bar for parts and stages, from drilling the enclosure to final testing.</li>
+        <li>Change how many a build needs with − and +, or swap a part for another in one tap.</li>
+        <li>Short on a 100 nF film cap? It offers the ceramic you have 25 of.</li>
+        <li>Keep the schematic, layout or build doc with the build, and open it whenever you need it.</li>
+      </ul>
+    </div>
+    <figure class="shot browser"><img src="images/web-app/build-parts.webp" width="1100" height="640" loading="lazy" alt="A build's parts: a short 1N34A diode, a 100 nF film box cap with a one-tap Use 100 nF Ceramic instead suggestion, and ticked resistors."></figure>
+  </section>
+
+  <section class="feature wa-feature">
+    <div class="feature-text">
+      <h2>Know what you're short of, across every build.</h2>
+      <p>Build Shortages adds up everything your planned and in-progress builds need against what's in the drawers.</p>
+      <ul class="points">
+        <li>Two builds needing five of a part when you have eight? You're two short, even though each build looks covered.</li>
+        <li>See one pedal at a time with the Build menu.</li>
+        <li>Use a part you already have instead: a TL062 for a TL072, any cap of the same value. A note is added to the build.</li>
+      </ul>
+    </div>
+    <figure class="shot browser"><img src="images/web-app/shortages.webp" width="1100" height="720" loading="lazy" alt="Build Shortages listing a 1N34A diode, 100 nF film box cap, 1M and 4.7k resistors, with how many each build needs."></figure>
+  </section>
+
+  <section class="feature wa-feature">
+    <div class="feature-text">
+      <h2>A shopping list you can actually shop from.</h2>
+      <p>One click turns your shortages into a list grouped by category, smallest value first, quantity first on every line.</p>
+      <ul class="points">
+        <li>Round up to pack sizes (resistors, diodes and LEDs in 10s; capacitors and transistors in 5s), or add one spare of each small part.</li>
+        <li>Optionally note which builds need each part.</li>
+        <li>Copy it into your supplier's cart notes, or share it.</li>
+      </ul>
+    </div>
+    <figure class="shot dialog"><img src="images/web-app/shopping-list.webp" width="560" height="588" loading="lazy" alt="Shopping List with Pack sizes chosen: 10 × 4.7k, 10 × 1M, 10 × 100 nF Film Box, 10 × 1N34A."></figure>
+  </section>
+
+  <section class="feature wa-feature">
+    <div class="feature-text">
+      <h2>Sign in, and it's everywhere you are.</h2>
+      <p>Signing in is optional. Do it, and your inventory and builds save to your account as you work and appear in any browser you sign in on.</p>
+      <ul class="points">
+        <li>Continue with Google or Apple, get a sign-in link by email, or use a password.</li>
+        <li>Works offline: changes save when you reconnect.</li>
+        <li>Delete your account and its data any time. See the <a href="privacy.html">privacy policy</a>.</li>
+      </ul>
+    </div>
+    <figure class="shot dialog"><img src="images/web-app/sign-in.webp" width="560" height="572" loading="lazy" alt="Sign In: Continue with Google, Continue with Apple, or email a sign-in link."></figure>
+  </section>
+
+  <section class="feature wa-feature">
+    <div class="feature-text">
+      <h2>Right there at the bench.</h2>
+      <p>The web app fits your phone, with touch-sized controls for ticking parts and changing counts while the iron heats up.</p>
+      <ul class="points">
+        <li>Collapsible parts list, progress and stages on one screen.</li>
+        <li>Build Shortages and the shopping list in your pocket at the parts store.</li>
+        <li>Prefer an app? PedalStock for iPhone and iPad reads and writes the same files.</li>
+      </ul>
+    </div>
+    <div class="phone-pair">
+      <figure class="shot phone-shot"><img src="images/web-app/phone-build.webp" width="390" height="664" loading="lazy" alt="The web app on an iPhone: a build's progress and parts."></figure>
+      <figure class="shot phone-shot"><img src="images/web-app/phone-shortages.webp" width="390" height="664" loading="lazy" alt="The web app on an iPhone: Build Shortages."></figure>
+    </div>
+  </section>
+
+  <section class="feature wa-feature" id="templates">
+    <div class="feature-text">
+      <h2>Bring your spreadsheet. We've got templates.</h2>
+      <p>Already keep your parts in Numbers, Excel or Google Sheets? Download a template, paste your rows in, save it as CSV and import it.</p>
+      <p>Your data is yours to take with you, too: export your inventory as CSV and your builds as a file, any time, and move them between browsers or to and from the iPhone app.</p>
+    </div>
+    <ul class="downloads">
+      <li><a href="templates/pedalstock-inventory-template.csv" download>Inventory template</a> <span class="dl-note">Every inventory column, with example parts.</span></li>
+      <li><a href="templates/pedalstock-inventory-order-template.csv" download>Inventory order template</a> <span class="dl-note">Adds a new order on top of what you have.</span></li>
+      <li><a href="templates/pedalstock-bom-template.csv" download>BOM template, PedalStock columns</a> <span class="dl-note">One row per part, with category and quantity.</span></li>
+      <li><a href="templates/pedalstock-bom-designator-template.csv" download>BOM template, by part label</a> <span class="dl-note">The usual Designator, Value, Qty layout.</span></li>
+      <li class="dl-more">How each column works: <a href="guide.html#formats">File and BOM formats</a> in the guide.</li>
+    </ul>
+  </section>
+
+</div>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Your parts list, on your terms.</h2>
+    <div><h3>Stays in your browser</h3><p>Without an account, everything is kept in your browser on your computer. Nothing is uploaded.</p></div>
+    <div><h3>No tracking</h3><p>No ads, no analytics, no cookies. Sign in only if you want your data in more than one place.</p></div>
+    <div><h3>Free to use</h3><p>Open it and start adding parts. No download, no sign-up.</p></div>
+  </div>
+</section>
+
+<section class="wa-final">
+  <div class="wrap">
+    <h2>Ready when your next kit arrives.</h2>
+    <div class="cta-row" style="justify-content: center">
+      <a class="cta" href="app/">Open the Web App</a>
+      <a class="cta cta-secondary" href="guide.html">Read the Guide</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 PedalStock</span>
+    <nav aria-label="Footer"><a href="guide.html">Guide</a><a href="app/">Web App</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+  </div>
+</footer>
+</body>
+</html>

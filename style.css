@@ -186,3 +186,34 @@ h1 { font: 700 clamp(38px, 6vw, 60px)/1.04 var(--font-display); letter-spacing: 
 .downloads a::before { content: "↓ "; }
 .downloads a:hover { text-decoration: underline; }
 .dl-note { font-size: 14px; color: var(--text-secondary); }
+
+
+/* Web app page: screenshots in frames */
+.wa-hero .wrap { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+.wa-feature { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
+.wa-feature:nth-child(even) { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); }
+.shot { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--card-border); background: var(--background); box-shadow: 0 24px 60px rgb(0 0 0 / 0.45); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot.browser { padding-top: 30px; position: relative; background: #1d1d21; }
+.shot.browser::before { content: ""; position: absolute; top: 11px; left: 14px; width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; box-shadow: 15px 0 0 #febc2e, 30px 0 0 #28c840; opacity: 0.85; }
+.shot.dialog { max-width: 460px; margin-inline: auto; width: 100%; border-radius: 18px; }
+.shot-pair { display: grid; gap: 18px; justify-items: center; }
+.phone-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; max-width: 460px; margin-inline: auto; width: 100%; }
+.shot.phone-shot { border-radius: 30px; border: 6px solid #2c2c30; }
+.downloads { list-style: none; padding: 0; display: grid; gap: 10px; margin: 0; }
+.downloads li { background: var(--surface); border: 1px solid var(--card-border); border-radius: 12px; padding: 12px 14px; margin: 0; display: grid; gap: 2px; }
+.downloads a { color: var(--primary-accent); font-weight: 600; text-decoration: none; }
+.downloads li:not(.dl-more) a::before { content: "↓ "; }
+.downloads a:hover { text-decoration: underline; }
+.downloads .dl-more { background: none; border: none; padding: 4px 2px; color: var(--text-secondary); font-size: 14px; display: block; }
+.downloads .dl-more a { color: var(--secondary-accent); font-weight: 400; }
+.wa-final { padding-block: 64px 80px; text-align: center; border-top: 1px solid var(--card-border); }
+.wa-final h2 { font: 700 clamp(26px, 3.2vw, 34px)/1.15 var(--font-display); margin: 0 0 22px; }
+@media (max-width: 820px) {
+  .wa-hero .wrap, .wa-feature, .wa-feature:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+  .wa-feature .feature-text { order: 0 !important; }
+}
+.downloads .dl-more a::before { content: none; }
+/* Bullets on the web app page hold bold text and links, so they flow as text. */
+.wa-feature .points li { display: block; position: relative; padding-left: 30px; }
+.wa-feature .points li::before { position: absolute; left: 0; top: 0; }
