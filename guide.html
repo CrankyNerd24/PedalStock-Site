@@ -57,7 +57,7 @@
       <li>Start a build from a parts list: paste it, import a CSV, or scan a schematic.</li>
       <li>Open <strong>Low Stock → Build Shortages</strong> to see what you need to order.</li>
     </ol>
-    <div class="callout"><p><strong>Your data stays with you.</strong> The app stores everything on your iPhone or iPad. The web app stores everything in your browser on that computer. There's no account and no server, and the two don't sync on their own. Use export and import to move data between them (see <a href="#moving">backups and moving your data</a>).</p></div>
+    <div class="callout"><p><strong>Your data stays with you.</strong> The app stores everything on your iPhone or iPad. The web app stores everything in your browser on that computer. There's no account to make. On the web you can sign in, if you want to, to use your data in any browser (see <a href="#accounts">web accounts</a>). The app and the web don't sync with each other: use export and import to move data between them (see <a href="#moving">backups and moving your data</a>).</p></div>
 
     <h2 id="inventory">2. Inventory</h2>
     <h3>Adding a part</h3>
@@ -178,7 +178,7 @@
     <p>The Resources tab collects links to forums, traced schematics, layout sites, PCB and kit makers, and parts suppliers. Copy a parts list from any of them and use <strong>Paste BOM…</strong> to bring it in.</p>
 
     <h2 id="moving">13. Backups and moving your data</h2>
-    <p>The app's data is included in your iPhone or iPad backup. The web app's data lives in the browser on one computer, and clearing that browser's site data deletes it, so export now and then.</p>
+    <p>The app's data is included in your iPhone or iPad backup. The web app's data lives in the browser on one computer, and clearing that browser's site data deletes it, so export now and then, or <a href="#accounts">sign in</a> to keep your inventory and builds in an account.</p>
     <p>To move everything to another device, or between the app and the web:</p>
     <ol>
       <li>Export your inventory. App: <strong>Inventory → + → Export Inventory…</strong>. Web: <strong>Export CSV</strong>.</li>
@@ -186,6 +186,16 @@
       <li>On the other device, import the inventory first, then the builds, so each build's parts match up.</li>
     </ol>
     <p>Importing the same builds file twice doesn't create copies: builds that are already there are skipped.</p>
+
+    <h3 id="accounts">Web accounts <span class="tag web">Web</span></h3>
+    <p>Signing in is optional. Choose <strong>Sign In</strong> at the right end of the Inventory, Builds and Low Stock tabs, then continue with Google or Apple, have a sign-in link emailed to you, or use an email and password. Once you're signed in:</p>
+    <ul>
+      <li>Your inventory and builds save to your account as you work, and appear in any browser you sign in on. Changes made in another browser show up straight away.</li>
+      <li>The <strong>Account</strong> button's dot shows the state: green when everything's saved, blue while saving, orange when you're offline (changes save when you reconnect).</li>
+      <li>Attached files aren't uploaded yet; they stay in the browser you attached them in.</li>
+    </ul>
+    <p>The first time you sign in on a browser that already has data, and your account does too, you choose: <strong>Merge Them</strong> (parts in both are kept once, with the account's stock counts), <strong>Use My Account's Data</strong>, or <strong>Use This Browser's Data</strong>.</p>
+    <p><strong>Sign Out</strong> removes that browser's copy; your data stays in your account. <strong>Delete Account</strong> deletes your account and everything saved in it. See the <a href="privacy.html">privacy policy</a> for what's stored.</p>
 
     <h2 id="formats">14. File and BOM formats</h2>
     <h3 id="templates">CSV templates</h3>
