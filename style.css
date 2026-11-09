@@ -18,7 +18,7 @@
   color-scheme: dark;
 }
 :root[data-theme="sky"] { --primary-accent: #5bc0f8; --secondary-accent: #f5b04c; }
-:root[data-theme="deep"] { --primary-accent: #3d9cf0; --secondary-accent: #ffc145; }
+:root[data-theme="orange"] { --primary-accent: #ff8c42; --secondary-accent: #4ecdc4; }
 
 * { box-sizing: border-box; }
 html { background: var(--background); }

@@ -4,12 +4,12 @@
   var THEMES = [
     { id: 'pcb', name: 'PCB Green', primary: '#3fcf8e', secondary: '#e9c46a' },
     { id: 'sky', name: 'Sky Blue', primary: '#5bc0f8', secondary: '#f5b04c' },
-    { id: 'deep', name: 'Deep Blue', primary: '#3d9cf0', secondary: '#ffc145' }
+    { id: 'orange', name: 'Classic Orange', primary: '#ff8c42', secondary: '#4ecdc4' }
   ];
   var KEY = 'pedalstock.theme';
   function current() {
     var t = document.documentElement.dataset.theme;
-    return t === 'sky' || t === 'deep' ? t : 'pcb';
+    return t === 'sky' || t === 'orange' ? t : 'pcb';
   }
   function apply(id) {
     if (id === 'pcb') delete document.documentElement.dataset.theme;
