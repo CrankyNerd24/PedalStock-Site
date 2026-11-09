@@ -28,7 +28,7 @@ body {
 }
 a { color: var(--secondary-accent); text-underline-offset: 3px; }
 a:focus-visible, .cta:focus-visible { outline: 3px solid var(--primary-accent); outline-offset: 3px; border-radius: 6px; }
-img, svg { max-width: 100%; }
+img, svg { max-width: 100%; height: auto; }
 
 .wrap {
   max-width: 1080px;
