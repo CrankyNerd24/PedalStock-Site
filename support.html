@@ -29,31 +29,31 @@
   <div class="wrap">
     <h1>Support</h1>
     <p>New to PedalStock? The <a href="guide.html">user guide</a> walks through everything, step by step.</p>
-    <p>Have a question, found a bug, or want a feature? Email <a class="contact" href="mailto:info@crankynerdcustoms.com">info@crankynerdcustoms.com</a> with your iPhone or iPad model and iOS version, and a screenshot if something looks wrong.</p>
+    <p>Have a question, found a bug, or want a feature? Email <a class="contact" href="mailto:info@crankynerdcustoms.com">info@crankynerdcustoms.com</a> with your browser and device (for example "Safari on iPhone" or "Chrome on Windows"), and a screenshot if something looks wrong.</p>
 
     <h2>How can I support PedalStock?</h2>
     <p>PedalStock is free. If it's saved you a parts order or a wasted afternoon, you can <a href="https://ko-fi.com/crankynerd" target="_blank" rel="noopener">leave a tip on Ko-fi</a>. Telling other builders about it, or emailing a bug or an idea, helps just as much.</p>
 
     <h2>How do I import my existing inventory?</h2>
-    <p>Export your spreadsheet as CSV (Numbers, Excel and Google Sheets all can), then in PedalStock go to <strong>Inventory → + → Import Inventory…</strong>. Only <code>name</code> and <code>category</code> columns are required. Other columns the app reads: <code>quantity</code>, <code>value</code>, <code>capacitance</code>, <code>capacitorType</code>, <code>voltageRating</code>, <code>lowStockThreshold</code>, <code>supplier</code>, <code>price</code>, <code>purchaseLink</code>, <code>commonlyUsed</code> and <code>notes</code>.</p>
+    <p>Export your spreadsheet as CSV (Numbers, Excel and Google Sheets all can), then in the <a href="app/">web app</a> use <strong>Import CSV…</strong> on the Inventory tab. Only <code>name</code> and <code>category</code> columns are required. Other columns PedalStock reads: <code>quantity</code>, <code>value</code>, <code>capacitance</code>, <code>capacitorType</code>, <code>voltageRating</code>, <code>lowStockThreshold</code>, <code>supplier</code>, <code>price</code>, <code>purchaseLink</code>, <code>commonlyUsed</code> and <code>notes</code>. There are <a href="guide.html#templates">CSV templates</a> to start from.</p>
 
     <h2>How do I add a new order on top of what I have?</h2>
     <p>Use an <code>addQuantity</code> column instead of <code>quantity</code>. Parts you already have get that many added; new ones are created. Parts are matched by name, or by category and value, so <code>10k</code> finds your "10kΩ Resistor".</p>
 
     <h2>How do I turn a parts list into a build?</h2>
-    <p>On the Builds tab, tap <strong>+</strong> and choose <strong>Paste BOM…</strong>, <strong>Import Project…</strong> or <strong>Scan Schematic/Layout…</strong>. For a build you've already started, open it and use <strong>Import Parts From PDF or Image…</strong>. You'll see what was read before anything is imported.</p>
+    <p>On the Builds tab, choose <strong>Paste BOM…</strong>, <strong>Scan…</strong> (a schematic, layout or build doc as an image, SVG or PDF), or <strong>Import Builds…</strong> with a CSV BOM. For a build you've already started, open it and use <strong>Paste More Parts…</strong> or <strong>Add from Scan…</strong>. You'll see what was read before anything is imported.</p>
 
     <h2>Why does a part show as short when the build looks covered?</h2>
     <p>Build Shortages adds up every Planning and In Progress build at once. If two builds each need five of a part and you have eight, both rows look fine on their own but you're two short overall. Use the Build menu at the top of Build Shortages to see one pedal at a time.</p>
 
-    <h2>Is my data backed up?</h2>
-    <p>Your inventory and builds are stored on your device and included in your iPhone or iPad backup. They don't sync between devices.</p>
+    <h2>Where is my data kept? Is it backed up?</h2>
+    <p>Your inventory and builds are kept in your browser on that computer or phone. Clearing the browser's data for pedalstockapp.com deletes them, so either <strong>sign in</strong> to keep them in an account, or use <strong>Export CSV</strong> and <strong>Export Builds</strong> now and then as a backup.</p>
 
-    <h2>Can I use the web app in more than one browser?</h2>
-    <p>Yes. In the <a href="app/">web app</a>, choose <strong>Sign In</strong> (at the right of the Inventory, Builds and Low Stock tabs) and sign in with an email link, a password, Google or Apple. Your inventory and builds then save to your account and appear in any browser you sign in on. Attached files stay in each browser for now. The iPhone app doesn't use web accounts yet, so move data between it and the web with export and import.</p>
+    <h2>Can I use PedalStock in more than one browser?</h2>
+    <p>Yes. In the <a href="app/">web app</a>, choose <strong>Sign In</strong> (at the right of the Inventory, Builds and Low Stock tabs) and sign in with an email link, a password, Google or Apple. Your inventory and builds then save to your account and appear in any browser you sign in on. Attached files stay in each browser for now.</p>
 
-    <h2>How do I move my inventory and builds to another device?</h2>
-    <p>Go to <strong>Inventory → + → Export Inventory…</strong> and save the file, for example to iCloud Drive, or save it and then AirDrop or email it. On the other device, use <strong>Import Inventory…</strong> and pick that file. Then move your builds the same way: <strong>Builds → + → Export Builds…</strong>, and <strong>Import Builds…</strong> on the other device. Import the inventory first, so each build's parts match up.</p>
+    <h2>How do I move my data without an account?</h2>
+    <p>Use <strong>Export CSV</strong> on the Inventory tab and <strong>Export Builds</strong> on the Builds tab, and move the two files to the other computer or phone (email, a USB stick or a cloud drive). There, use <strong>Import CSV…</strong> and then <strong>Import Builds…</strong>. Import the inventory first, so each build's parts match up.</p>
   </div>
 </main>
 <footer class="site-footer">

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>User Guide · PedalStock</title>
-<meta name="description" content="How to use PedalStock on iPhone, iPad and the web: inventory, builds, scanning schematics, shortages, substitutions and moving your data.">
+<meta name="description" content="How to use the PedalStock web app: inventory, builds, scanning schematics, shortages, substitutions, the shopping list and moving your data.">
 <meta name="theme-color" content="#16161a">
 <link rel="icon" href="app-icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="app-icon.svg">
@@ -28,7 +28,7 @@
 <main class="page">
   <div class="wrap">
     <h1 id="top">User Guide</h1>
-    <p>PedalStock keeps track of the parts you have, turns a parts list into a build, and tells you what to order before you start soldering. It runs as an app on iPhone and iPad, and as a <a href="app/">web app</a> in any modern browser. This guide covers both. Where something only exists in one, it's marked <span class="tag app">App</span> or <span class="tag web">Web</span>.</p>
+    <p>PedalStock keeps track of the parts you have, turns a parts list into a build, and tells you what to order before you start soldering. It's a free <a href="app/">web app</a> that runs in any modern browser, on a computer or a phone.</p>
 
     <nav class="toc" aria-label="Contents">
       <strong>Contents</strong>
@@ -44,29 +44,28 @@
         <li><a href="#finishing">Finishing, reopening and deleting</a></li>
         <li><a href="#low-stock">Low Stock and Build Shortages</a></li>
         <li><a href="#substitutes">Substitutes</a></li>
-        <li><a href="#resources">Resources</a></li>
         <li><a href="#moving">Backups and moving your data</a></li>
         <li><a href="#formats">File and BOM formats, and CSV templates</a></li>
       </ol>
     </nav>
 
     <h2 id="start">1. Getting started</h2>
-    <p>PedalStock has three main tabs: <strong>Inventory</strong> for the parts you own, <strong>Builds</strong> for the pedals you're making, and <strong>Low Stock</strong> for what's running low or missing. The app adds a fourth, <strong>Resources</strong>, with links to forums, layouts and suppliers.</p>
+    <p>PedalStock has three main tabs: <strong>Inventory</strong> for the parts you own, <strong>Builds</strong> for the pedals you're making, and <strong>Low Stock</strong> for what's running low or missing.</p>
     <p>A good first session:</p>
     <ol>
       <li>Add your parts, or import them from a spreadsheet (see <a href="#import-inventory">importing inventory</a>).</li>
       <li>Start a build from a parts list: paste it, import a CSV, or scan a schematic.</li>
       <li>Open <strong>Low Stock → Build Shortages</strong> to see what you need to order.</li>
     </ol>
-    <p><strong>Colours:</strong> PedalStock comes in PCB Green, with Sky Blue and Classic Orange to choose from. In the app, go to <strong>Resources → Appearance</strong>; on the web, use <strong>Theme</strong> at the bottom of any page. The web app and this site share the choice.</p>
-    <div class="callout"><p><strong>Your data stays with you.</strong> The app stores everything on your iPhone or iPad. The web app stores everything in your browser on that computer. There's no account to make. On the web you can sign in, if you want to, to use your data in any browser (see <a href="#accounts">web accounts</a>). The app and the web don't sync with each other: use export and import to move data between them (see <a href="#moving">backups and moving your data</a>).</p></div>
+    <p><strong>Colours:</strong> PedalStock comes in PCB Green, with Sky Blue and Classic Orange to choose from. Use <strong>Theme</strong> at the bottom of any page; the web app and this site share the choice.</p>
+    <div class="callout"><p><strong>Your data stays with you.</strong> PedalStock keeps everything in your browser on that computer or phone. There's no account to make. If you want your data in more than one browser, you can sign in (see <a href="#accounts">accounts</a>), or move it with export and import (see <a href="#moving">backups and moving your data</a>).</p></div>
 
     <h2 id="inventory">2. Inventory</h2>
     <h3>Adding a part</h3>
-    <p>App: <strong>Inventory → + → Add Part</strong>. Web: <strong>Add Part</strong>. Choose a category, then fill in what you know:</p>
+    <p>On the Inventory tab, choose <strong>Add Part</strong>. Pick a category, then fill in what you know:</p>
     <ul>
       <li><strong>Value</strong>, such as <code>10k</code>, <code>2N3904</code>, <code>1N4148</code> or <code>B100k</code>. For capacitors you enter a <strong>capacitance</strong> (<code>100nF</code>), a <strong>type</strong> and an optional <strong>voltage rating</strong> instead.</li>
-      <li><strong>Name</strong> is required in the app's Inventory form. On the web, and when you create a new part from a build, you can leave it blank and it's made from the value and category, such as "10k Resistor".</li>
+      <li><strong>Name</strong> can be left blank: it's made from the value and category, such as "10k Resistor", or just "1/4 Mono Jack" when the value already says what it is.</li>
       <li><strong>Quantity</strong> is how many you have, and <strong>low-stock threshold</strong> is the count at or below which the part counts as low.</li>
       <li><strong>Commonly used</strong> marks a part you always want in stock. Only commonly used parts appear on the Low Stock list, and they get a star in Inventory.</li>
       <li><strong>Supplier</strong>, <strong>price</strong>, <strong>purchase link</strong> and <strong>notes</strong> are for your own reference.</li>
@@ -78,7 +77,7 @@
     <p>A <span style="color:var(--warning)">▲</span> next to a part means its quantity is at or below its threshold. Tap a part to see its details, the builds it's used in and, for capacitors, its <a href="#substitutes">substitutes</a>. Long lists have a back-to-top button at the bottom right.</p>
 
     <h3 id="import-inventory">Importing and exporting inventory</h3>
-    <p>App: <strong>Inventory → + → Import Inventory…</strong> or <strong>Export Inventory…</strong>. Web: <strong>Import CSV…</strong> or <strong>Export CSV</strong>.</p>
+    <p>On the Inventory tab, use <strong>Import CSV…</strong> or <strong>Export CSV</strong>.</p>
     <p>Import reads a CSV saved from Numbers, Excel or Google Sheets. Rows that match a part you already have update it, and the rest are added. Parts match by name, or by category and value. Only the columns in your file are changed: leave out <code>price</code> and existing prices stay as they are.</p>
     <p>To add a new order on top of what you already have, use an <code>addQuantity</code> column instead of <code>quantity</code>. See <a href="#formats">file formats</a> for every column, or start from a <a href="#templates">CSV template</a>.</p>
 
@@ -88,7 +87,7 @@
     <p>The <strong>voltage rating</strong> is shown in Build Shortages and on build pages, so you can tell a 16V cap from a 25V one at a glance. Parts with the same value but different voltages are treated as different parts.</p>
 
     <h2 id="duplicates">4. Duplicate parts</h2>
-    <p>Imports and scans can leave you with the same part twice, for example "10k" and "10kΩ Resistor". When PedalStock spots likely duplicates, a "possible duplicates" card appears at the top of Inventory. You can also open the review any time: app, <strong>Inventory → + → Find Duplicates…</strong>; web, <strong>Find Duplicates…</strong>.</p>
+    <p>Imports and scans can leave you with the same part twice, for example "10k" and "10kΩ Resistor". When PedalStock spots likely duplicates, a "possible duplicates" card appears at the top of Inventory. You can also open the review any time with <strong>Find Duplicates…</strong> on the Inventory tab.</p>
     <ul>
       <li>Untick any part in a group that doesn't belong.</li>
       <li>Tap <strong>Merge</strong> and choose which part to keep. Quantities are added together, and builds that used the others now use the kept part.</li>
@@ -97,14 +96,13 @@
     <p>Capacitors with different voltages or types aren't grouped as duplicates.</p>
 
     <h2 id="new-build">5. Starting a build</h2>
-    <p>On the Builds tab (app: tap <strong>+</strong>), pick how to begin:</p>
+    <p>On the Builds tab, pick how to begin:</p>
     <div class="table-wrap"><table>
       <thead><tr><th>Option</th><th>Use it for</th></tr></thead>
       <tbody>
         <tr><td><strong>New Build</strong></td><td>An empty build you'll add parts to by hand.</td></tr>
         <tr><td><strong>Paste BOM…</strong></td><td>A parts list copied from a forum post, build doc or web page, one part per line: <code>R1 10k</code>, <code>C3 100nF</code>, <code>Q1 2N3904 x2</code>.</td></tr>
         <tr><td><strong>Scan Schematic/Layout…</strong></td><td>A schematic, vero or stripboard layout, or kit build doc as an image, SVG or PDF. See <a href="#scanning">scanning</a>.</td></tr>
-        <tr><td><strong>Import Project…</strong> <span class="tag app">App</span></td><td>A CSV BOM or a PedalStock project JSON file.</td></tr>
         <tr><td><strong>Import Builds…</strong></td><td>A builds file from Export Builds, or a CSV BOM, which becomes a new build named after the file. See the <a href="#templates">BOM templates</a>.</td></tr>
       </tbody>
     </table></div>
@@ -112,12 +110,12 @@
     <p>Starting a build doesn't take anything out of inventory. Parts are only taken when you tick them as installed, or when you mark the build complete.</p>
 
     <h2 id="scanning">6. Scanning schematics and layouts</h2>
-    <p>Scanning reads the printed labels and values on a schematic or layout, such as <code>R1</code> next to <code>10k</code>, and pairs each label with the value nearest to it. It works on PNG, JPG, SVG and PDF files. The app can also scan paper with the camera; see <a href="#files">schematics and layouts</a>. The file is read on your device and never uploaded.</p>
-    <p>PDFs that contain real text, such as kit build docs, are read from that text, which is fast and exact. Scanned PDFs and images go through text recognition. That's very good in the app, and good but less accurate on the web.</p>
+    <p>Scanning reads the printed labels and values on a schematic or layout, such as <code>R1</code> next to <code>10k</code>, and pairs each label with the value nearest to it. It works on PNG, JPG, SVG and PDF files. On a phone you can also take a photo of a paper schematic. The file is read in your browser and never uploaded.</p>
+    <p>PDFs that contain real text, such as kit build docs, are read from that text, which is fast and exact. Scanned PDFs and images go through text recognition, which handles clear, printed labels well; check its work on the review screen.</p>
     <h3>Review Scan</h3>
     <p>Nothing is imported until you've checked it on the <strong>Review Scan</strong> screen:</p>
     <ul>
-      <li><strong>Recognized</strong>: each label with the value it was paired with. Fix any value that was misread. To drop a line, swipe it in the app or tap ✕ on the web.</li>
+      <li><strong>Recognized</strong>: each label with the value it was paired with. Fix any value that was misread. To drop a line, tap ✕.</li>
       <li><strong>Labels without a value</strong>: labels the scan couldn't pair. Type a value to include the part, or leave it blank to skip it.</li>
       <li><strong>Values without a label</strong>: leftover text such as voltages and page numbers, plus real values whose label was missed. Use <strong>Use…</strong> to give a value to one of those labels, or to add it as a part of a chosen category.</li>
     </ul>
@@ -138,21 +136,19 @@
     <p>Parts are grouped by category in collapsible sections. A <span style="color:var(--warning)">▲</span> on a section or row means you don't have enough in stock. On each part row:</p>
     <ul>
       <li><strong>Tick</strong> the circle when you install the part. It comes out of inventory then. Untick it to put it back.</li>
-      <li><strong>− and +</strong> change how many the build needs. In the app, tap the count itself to pick a number. You can only change the count of a part that isn't ticked, so untick it first if you need to.</li>
+      <li><strong>− and +</strong> change how many the build needs. You can only change the count of a part that isn't ticked, so untick it first if you need to.</li>
       <li><strong>Tap the part's name</strong> (marked ⇄) to use a different part instead, such as a TL062 in place of a TL072. You can pick any part in inventory or create a new one, even if you have none in stock.</li>
-      <li><strong>Remove</strong> it from the build: swipe left or touch and hold in the app, or tap ✕ on the web. Anything it took from inventory goes back.</li>
+      <li><strong>Remove</strong> it from the build with ✕. Anything it took from inventory goes back.</li>
     </ul>
-    <p>To add parts, use <strong>Add Part</strong>, <strong>Paste More Parts…</strong> <span class="tag web">Web</span>, <strong>Add from Scan…</strong> <span class="tag web">Web</span> or <strong>Import Parts From PDF or Image…</strong> <span class="tag app">App</span>. Parts already in the build have their count raised instead of getting a second row. If a build ends up with the same part on two rows, a <strong>Merge Duplicates</strong> button appears above the parts list.</p>
+    <p>To add parts, use <strong>Add Part</strong>, <strong>Paste More Parts…</strong> or <strong>Add from Scan…</strong>. Parts already in the build have their count raised instead of getting a second row. If a build ends up with the same part on two rows, a <strong>Merge Duplicates</strong> button appears above the parts list.</p>
     <h3>Progress</h3>
     <p>The progress bar counts installed parts and these stages: Parts gathered, Enclosure drilled, Enclosure painted / finished, Board populated, Off-board wiring (pots, jacks, switch, LED, power), Boxed up and Tested. Tick stages as you go.</p>
 
     <h2 id="files">8. Schematics and layouts</h2>
     <p>Each build has a <strong>Schematics &amp; Layouts</strong> section for the files you build from. Scanned files are added here automatically. You can also:</p>
     <ul>
-      <li>Attach a PDF, image or SVG yourself. In the app, use <strong>Attach Schematic or Layout</strong> and choose a file or a photo. On the web, use <strong>Attach File…</strong>.</li>
-      <li><strong>Scan with Camera…</strong> <span class="tag app">App</span> to photograph a paper schematic as a clean PDF.</li>
-      <li><strong>Find Schematic or BOM Online…</strong> <span class="tag app">App</span> searches build-doc sites for the build's name. You pick which result to download, attach or import parts from.</li>
-      <li>Tap a file to open it. In the app, touch and hold a file to rename or delete it. On the web, use <strong>Download</strong>, <strong>Rename</strong> or ✕.</li>
+      <li>Attach a PDF, image or SVG yourself with <strong>Attach File…</strong>. On a phone you can take a photo instead.</li>
+      <li>Tap a file to open it, or use <strong>Download</strong>, <strong>Rename</strong> or ✕.</li>
     </ul>
     <p>Deleting a build deletes its files too.</p>
 
@@ -160,7 +156,7 @@
     <ul>
       <li><strong>Mark Build Complete</strong> takes any parts you haven't ticked out of inventory, ticks every stage and locks the build.</li>
       <li><strong>Reopen Build</strong> moves a completed build back to In Progress. You choose whether to return its parts to inventory or keep inventory as it is.</li>
-      <li><strong>Delete Build</strong>: if the build has taken parts, you choose whether to return them to inventory or keep them as used. In the app you can also swipe a build on the Builds tab to delete it.</li>
+      <li><strong>Delete Build</strong>: if the build has taken parts, you choose whether to return them to inventory or keep them as used.</li>
     </ul>
 
     <h2 id="low-stock">10. Low Stock and Build Shortages</h2>
@@ -170,27 +166,25 @@
       <li><strong>Build Shortages</strong>: everything your Planning and In Progress builds need more of than you have. Each row shows the part, how many you have and need, how many you're short, and which builds need it.</li>
     </ul>
     <p>Shortages are added up across all open builds. If two builds each need five of a part and you have eight, each build looks covered on its own, but you're two short overall. Use the <strong>Build</strong> menu at the top to see one pedal at a time. The web version remembers your choice.</p>
-    <p>To order, open the <strong>Shopping List</strong>: the cart button in the app, or <strong>Shopping List…</strong> on the web. It lists what you're short of grouped by category, smallest value first, with the quantity first on each line. Choose how to round up: <strong>Exact</strong>, <strong>Pack Sizes</strong> (resistors, diodes and LEDs in 10s, capacitors and transistors in 5s) or <strong>+1 Spare</strong> on small parts, and whether to note which builds need each part. Then copy it or share it. It follows the Build menu, so you can make a list for one pedal.</p>
+    <p>To order, open <strong>Shopping List…</strong>. It lists what you're short of grouped by category, smallest value first, with the quantity first on each line. Choose how to round up: <strong>Exact</strong>, <strong>Pack Sizes</strong> (resistors, diodes and LEDs in 10s, capacitors and transistors in 5s) or <strong>+1 Spare</strong> on small parts, and whether to note which builds need each part. Then copy it or share it. It follows the Build menu, so you can make a list for one pedal.</p>
     <p>Tap a shortage to use a part you already have instead (see <a href="#substitutes">substitutes</a>).</p>
 
     <h2 id="substitutes">11. Substitutes</h2>
     <p>When a part is short, PedalStock can suggest one you have that will do the job. For capacitors, that's the same value in an interchangeable type: box film, greenies and other film first for most values, and ceramic or silver mica first below 1nF. Electrolytic, tantalum and polarized caps are never swapped. A short part on a build shows a one-tap <strong>Use … instead</strong> suggestion when you have enough of an interchangeable part, and a capacitor's part page lists its substitutes, best first.</p>
     <p>From Build Shortages, or by tapping a part's name on a build, you can pick any part as the replacement. That includes ICs and transistors (a TL062 for a TL072), parts you have none of, or a new part. You choose which builds the swap applies to, and a note is added to each build.</p>
 
-    <h2 id="resources">12. Resources <span class="tag app">App</span></h2>
-    <p>The Resources tab collects links to forums, traced schematics, layout sites, PCB and kit makers, and parts suppliers. Copy a parts list from any of them and use <strong>Paste BOM…</strong> to bring it in.</p>
 
-    <h2 id="moving">13. Backups and moving your data</h2>
-    <p>The app's data is included in your iPhone or iPad backup. The web app's data lives in the browser on one computer, and clearing that browser's site data deletes it, so export now and then, or <a href="#accounts">sign in</a> to keep your inventory and builds in an account.</p>
-    <p>To move everything to another device, or between the app and the web:</p>
+    <h2 id="moving">12. Backups and moving your data</h2>
+    <p>Your data lives in the browser on one computer or phone, and clearing that browser's site data deletes it, so export now and then, or <a href="#accounts">sign in</a> to keep your inventory and builds in an account.</p>
+    <p>To move everything to another browser or device:</p>
     <ol>
-      <li>Export your inventory. App: <strong>Inventory → + → Export Inventory…</strong>. Web: <strong>Export CSV</strong>.</li>
-      <li>Export your builds. App: <strong>Builds → + → Export Builds…</strong>. Web: <strong>Export Builds</strong>. The file includes each build's parts, progress, notes and attached files.</li>
+      <li>Export your inventory with <strong>Export CSV</strong> on the Inventory tab.</li>
+      <li>Export your builds with <strong>Export Builds</strong> on the Builds tab. The file includes each build's parts, progress, notes and attached files.</li>
       <li>On the other device, import the inventory first, then the builds, so each build's parts match up.</li>
     </ol>
     <p>Importing the same builds file twice doesn't create copies: builds that are already there are skipped.</p>
 
-    <h3 id="accounts">Web accounts <span class="tag web">Web</span></h3>
+    <h3 id="accounts">Accounts</h3>
     <p>Signing in is optional. Choose <strong>Sign In</strong> at the right end of the Inventory, Builds and Low Stock tabs, then continue with Google or Apple, have a sign-in link emailed to you, or use an email and password. Once you're signed in:</p>
     <ul>
       <li>Your inventory and builds save to your account as you work, and appear in any browser you sign in on. Changes made in another browser show up straight away.</li>
@@ -200,13 +194,13 @@
     <p>The first time you sign in on a browser that already has data, and your account does too, you choose: <strong>Merge Them</strong> (parts in both are kept once, with the account's stock counts), <strong>Use My Account's Data</strong>, or <strong>Use This Browser's Data</strong>.</p>
     <p><strong>Sign Out</strong> removes that browser's copy; your data stays in your account. <strong>Delete Account</strong> deletes your account and everything saved in it. See the <a href="privacy.html">privacy policy</a> for what's stored.</p>
 
-    <h2 id="formats">14. File and BOM formats</h2>
+    <h2 id="formats">13. File and BOM formats</h2>
     <h3 id="templates">CSV templates</h3>
     <p>Start from a template: download it, open it in Numbers, Excel or Google Sheets, replace the example rows with your own, and save or export it as CSV.</p>
     <ul class="downloads">
-      <li><a href="templates/pedalstock-inventory-template.csv" download>Inventory template</a> <span class="dl-note">Every inventory column, with example parts. Use with Import Inventory… (app) or Import CSV… (web).</span></li>
+      <li><a href="templates/pedalstock-inventory-template.csv" download>Inventory template</a> <span class="dl-note">Every inventory column, with example parts. Use with Import CSV… on the Inventory tab.</span></li>
       <li><a href="templates/pedalstock-inventory-order-template.csv" download>Inventory order template</a> <span class="dl-note">Adds a new order on top of what you have, using <code>addQuantity</code>.</span></li>
-      <li><a href="templates/pedalstock-bom-template.csv" download>BOM template, PedalStock columns</a> <span class="dl-note">One row per part with category and quantity. Use with Import Builds… or Import Project….</span></li>
+      <li><a href="templates/pedalstock-bom-template.csv" download>BOM template, PedalStock columns</a> <span class="dl-note">One row per part with category and quantity. Use with Import Builds… on the Builds tab.</span></li>
       <li><a href="templates/pedalstock-bom-designator-template.csv" download>BOM template, by part label</a> <span class="dl-note">The usual Designator, Value, Qty layout, as many kits and design tools export it.</span></li>
     </ul>
     <p>A BOM import names the new build after the file, so rename the file to the pedal's name first, for example <code>Fuzz Face.csv</code>.</p>
@@ -225,7 +219,7 @@
       </tbody>
     </table></div>
 
-    <h3>CSV BOMs (Import Builds, Import Project)</h3>
+    <h3>CSV BOMs (Import Builds)</h3>
     <p>Two layouts work. The first uses PedalStock's own columns, <code>category</code> and <code>quantity</code>, plus optional <code>value</code>, <code>capacitance</code>, <code>capacitorType</code> and <code>voltageRating</code>:</p>
     <pre class="sample">category,value,capacitance,capacitorType,voltageRating,quantity
 Resistor,10k,,,,2
@@ -258,7 +252,7 @@ GAIN,B500k,1</pre>
     <p>In pasted lists, add <code>x2</code>, <code>×3</code> or <code>qty 4</code> at the end of a line for more than one. Lines that don't start with a known label are skipped.</p>
 
     <h3>Builds file</h3>
-    <p>Export Builds writes a <code>.json</code> file holding every build with its parts, progress, stages, notes and attached files. The app and the web app read and write the same file.</p>
+    <p>Export Builds writes a <code>.json</code> file holding every build with its parts, progress, stages, notes and attached files.</p>
 
     <p style="margin-top: 40px">Still stuck? See <a href="support.html">Support</a> or email <a class="contact" href="mailto:info@crankynerdcustoms.com">info@crankynerdcustoms.com</a>. <a class="back-top" href="#top">Back to top ↑</a></p>
   </div>
