@@ -54,7 +54,7 @@
     <p>A good first session:</p>
     <ol>
       <li>Add your parts, or import them from a spreadsheet (see <a href="#import-inventory">importing inventory</a>).</li>
-      <li>Start a build from a parts list: paste it, import a CSV, or scan a schematic.</li>
+      <li>Start a build from a parts list: paste it, import a CSV, scan a schematic, or <a href="#find-online">find one online</a>.</li>
       <li>Open <strong>Low Stock → Build Shortages</strong> to see what you need to order.</li>
     </ol>
     <p><strong>Colours:</strong> PedalStock comes in PCB Green, with Sky Blue and Classic Orange to choose from. Use <strong>Theme</strong> at the bottom of any page; the web app and this site share the choice.</p>
@@ -105,6 +105,7 @@
       <thead><tr><th>Option</th><th>Use it for</th></tr></thead>
       <tbody>
         <tr><td><strong>New Build</strong></td><td>An empty build you'll add parts to by hand.</td></tr>
+        <tr><td><strong>Find Online…</strong></td><td>Search the layout and build-doc sites for a pedal, save what you find, and create the build from it. See <a href="#find-online">finding a schematic or BOM online</a>.</td></tr>
         <tr><td><strong>Paste BOM…</strong></td><td>A parts list copied from a forum post, build doc or web page, one part per line: <code>R1 10k</code>, <code>C3 100nF</code>, <code>Q1 2N3904 x2</code>.</td></tr>
         <tr><td><strong>Scan Schematic/Layout…</strong></td><td>A schematic, vero or stripboard layout, or kit build doc as an image, SVG or PDF. See <a href="#scanning">scanning</a>.</td></tr>
         <tr><td><strong>Import Builds…</strong></td><td>A builds file from Export Builds, or a CSV BOM, which becomes a new build named after the file. See the <a href="#templates">BOM templates</a>.</td></tr>
@@ -116,6 +117,14 @@
     <h2 id="scanning">6. Scanning schematics and layouts</h2>
     <p>Scanning reads the printed labels and values on a schematic or layout, such as <code>R1</code> next to <code>10k</code>, and pairs each label with the value nearest to it. Build-doc lines that say which value goes where are read along the line: <code>Tone: 25kB</code>, <code>IC2 is CD4046</code>, <code>IC3 &amp; IC4 are TL062</code>, and a range like <code>D1-D4: MA856</code> covers each part in it. Control names followed by a value, like <code>Rate and Depth 100K Log</code>, give each pot that value, with Log, Lin or Reverse read as the taper. Vero and stripboard layouts that print values on the parts with no labels work too: values printed sideways along the parts are read as well, and each becomes a resistor or capacitor by its unit (<code>10K</code>, <code>6,8K</code>, <code>100nF</code>). It works on PNG, JPG, SVG and PDF files. On a phone you can also take a photo of a paper schematic. The file is read in your browser and never uploaded.</p>
     <p>PDFs that contain real text, such as kit build docs, are read from that text, which is fast and exact. Scanned PDFs and images go through text recognition, which handles clear, printed labels well; check its work on the review screen.</p>
+    <h3 id="find-online">Finding a schematic or BOM online</h3>
+    <p><strong>Find Online…</strong> on the Builds tab, and <strong>Find Schematic or BOM Online…</strong> on a build, search the sites builders use at once: Tagboard Effects and Effects Layouts for vero and stripboard layouts, PedalPCB, Aion FX, PCBGuitarMania, DIY Fever and General Guitar Gadgets for build docs and BOMs, and Coda Effects for circuit write-ups. On a build, the search starts with the build's name.</p>
+    <p>Open a result to see the page in a new tab, and save the layout image or build doc PDF from it. Layout results show thumbnails: tap one to open it full size. These sites don't let other pages download their files, so the saving is done in that tab. Then, back in PedalStock:</p>
+    <ul>
+      <li>From the Builds tab, <strong>Create from a Saved File…</strong> scans it into a new build named after your search, or <strong>Paste Parts List…</strong> takes a parts list you copied from the page.</li>
+      <li>On a build, <strong>Scan a Saved File…</strong> adds its parts to the build, and <strong>Attach a Saved File…</strong> keeps it under Schematics &amp; Layouts.</li>
+    </ul>
+    <p>For sites that can't be searched directly (madbeanpedals, PedalLayouts, ElectroSmash, GuitarPCB, Fuzz Dog, Love My Switches and the FreeStompBoxes and DIYstompboxes forums) and for the whole web or image search, <strong>More places to look</strong> opens a web search in a new tab. Only your search words go to these sites; nothing about your inventory does.</p>
     <h3>Review Scan</h3>
     <p>Nothing is imported until you've checked it on the <strong>Review Scan</strong> screen:</p>
     <ul>
