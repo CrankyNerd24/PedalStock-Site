@@ -170,7 +170,7 @@
     <p>Tap a shortage to use a part you already have instead (see <a href="#substitutes">substitutes</a>).</p>
 
     <h2 id="substitutes">11. Substitutes</h2>
-    <p>When a resistor, capacitor, <a href="#pots">pot</a>, <a href="#opamps">op-amp</a> or <a href="#opamps">charge pump</a> is short, PedalStock suggests parts you have that will do the job. For resistors and capacitors, best first:</p>
+    <p>When a resistor, capacitor, <a href="#pots">pot</a>, <a href="#diodes">diode, LED</a>, <a href="#opamps">op-amp</a> or <a href="#opamps">charge pump</a> is short, PedalStock suggests parts you have that will do the job. For resistors and capacitors, best first:</p>
     <ol>
       <li><strong>The same value</strong> in another part: a capacitor of an interchangeable type (box film, greenies and other film first for most values, ceramic or silver mica first below 1nF), or the same cap with a higher voltage rating.</li>
       <li><strong>A nearby value within tolerance</strong>, closest first: a 10.2k for a 10k, a 47 nF for a 50 nF.</li>
@@ -187,6 +187,24 @@
     <p>A short part on a build shows a one-tap <strong>Use … instead</strong> suggestion when you have enough of a substitute, and each part page lists what can stand in for it. Two-part substitutes put both parts on the build, so a 10k needed twice becomes four 20k resistors. Two parts in series sit end to end in one part's place (stand them up, or bridge the holes on vero); in parallel they share the same two holes.</p>
     <h3 id="opamps">Op-amps</h3>
     <p>Op-amps with the same package and pinout drop into each other's sockets, so PedalStock suggests them too. It knows the common single (TL071, TL081, OPA134, NE5534…), dual (TL072, TL082, 4558, NE5532, OPA2134, LM358…) and quad (TL074, TL084, LM324…) chips under any maker's prefix or package suffix, so JRC4558D, RC4558P and NJM4558 are all the 4558. The same chip under another number comes first, then chips with the same kind of inputs (JFET or bipolar), then the rest, with a note where a swap needs care: the LM358's crossover distortion, the NE5534's compensation pins, the TL06x's low power. Each op-amp sounds a little different, which is why a socket is worth fitting. Search an op-amp, like <code>TL072</code>, to see every chip you have that fits its socket.</p>
+    <h3 id="diodes">Diodes and LEDs</h3>
+    <p>What makes a diode the right one depends on its job in the circuit:</p>
+    <ul>
+      <li><strong>Clipping</strong>: a pair to ground after a gain stage (hard clipping, as in a Distortion+ or RAT), or in an op-amp's feedback loop (soft clipping, as in a Tube Screamer). The forward voltage sets where it clips: the lower it is, the earlier the signal flattens, so the more it distorts and the quieter the pedal. The knee sets how smoothly it gets there.</li>
+      <li><strong>Power protection</strong>: one diode at the power input so a reversed supply can't do damage. It only has to carry the pedal's current, so any 1A diode works. A Schottky (1N5817, 1N5819) drops less voltage than a 1N4001.</li>
+      <li><strong>Charge pumps and rectifiers</strong>: voltage doublers, inverters and envelope followers. Current and speed matter more than the exact voltage.</li>
+    </ul>
+    <p>The families PedalStock knows, roughly from earliest to latest clipping:</p>
+    <ul>
+      <li><strong>Germanium</strong> (1N34A, 1N60, 1N270, OA90, OA91, D9): about 0.3V, with the softest knee and some leakage. Each one varies, and many "1N60" sold today are really Schottky (1N60P).</li>
+      <li><strong>Schottky</strong> (BAT41, BAT42/43, BAT46, BAT85, BAT54, 1N5711, and the 1A 1N5817–1N5819): about 0.2–0.4V with a harder knee. The usual stand-in for germanium.</li>
+      <li><strong>Silicon</strong> (1N4148, 1N914, 1N4448, which are interchangeable): about 0.6V. The rectifiers (1N4001–1N4007, 1N5408) clip at about the same voltage with a slightly softer knee.</li>
+      <li><strong>Zeners</strong> (1N47xx, 1N52xx, BZX55/79): matched by their voltage. A back-to-back pair clips at the zener voltage plus about 0.6V.</li>
+      <li><strong>LEDs</strong>: about 1.8V for red, 2.0V for orange and yellow, 2.1V for green, and 3V for blue, white, pure green and pink. That's much later than any diode, so a pedal clipping on LEDs is louder and cleaner.</li>
+    </ul>
+    <p>The tolerance decides how far a swap may go. <strong>Tight</strong> offers only the same family (germanium for germanium, red LED for red LED). <strong>Standard</strong> adds another family that clips at about the same voltage (Schottky for germanium, a 1N4001 for a 1N4148), LEDs within 0.3V, and any 1A diode for another. <strong>Loose</strong> offers any diode or LED, and says whether it will clip earlier or later. A small signal diode offered for a 1A diode is flagged as fine for clipping but not for power protection or a charge pump. As a power indicator, any colour of LED works.</p>
+    <p>Diode voltages are typical at the small currents in a pedal, not datasheet figures, and two diodes of the same type can differ, germanium most of all. Clipping diodes are worth socketing so you can try them by ear.</p>
+
     <h3>Charge pumps</h3>
     <p>The 7660-style charge pumps that make −9V or 18V in a pedal share one pinout: ICL7660, ICL7660S, TC7660, TC7660S, TC1044S, MAX1044, LTC1044, LTC1144 and MAX660. What differs is the highest supply each takes, so PedalStock offers the highest-rated first and says when one tops out at 9V or 10V and can't run from a 12V supply. The MAX660 is rated to 5.5V and can't run a 9V pedal at all. Ratings vary between makers' versions, so check the datasheet for anything above 9V.</p>
 
