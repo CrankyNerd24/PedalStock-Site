@@ -170,7 +170,7 @@
     <p>Tap a shortage to use a part you already have instead (see <a href="#substitutes">substitutes</a>).</p>
 
     <h2 id="substitutes">11. Substitutes</h2>
-    <p>When a resistor, capacitor, <a href="#pots">pot</a>, <a href="#diodes">diode, LED</a>, <a href="#opamps">op-amp</a> or <a href="#opamps">charge pump</a> is short, PedalStock suggests parts you have that will do the job. For resistors and capacitors, best first:</p>
+    <p>When a resistor, capacitor, <a href="#pots">pot</a>, <a href="#diodes">diode, LED</a>, <a href="#transistors">transistor</a>, <a href="#opamps">op-amp</a> or <a href="#opamps">charge pump</a> is short, PedalStock suggests parts you have that will do the job. For resistors and capacitors, best first:</p>
     <ol>
       <li><strong>The same value</strong> in another part: a capacitor of an interchangeable type (box film, greenies and other film first for most values, ceramic or silver mica first below 1nF), or the same cap with a higher voltage rating.</li>
       <li><strong>A nearby value within tolerance</strong>, closest first: a 10.2k for a 10k, a 47 nF for a 50 nF.</li>
@@ -204,6 +204,25 @@
     </ul>
     <p>The tolerance decides how far a swap may go. <strong>Tight</strong> offers only the same family (germanium for germanium, red LED for red LED). <strong>Standard</strong> adds another family that clips at about the same voltage (Schottky for germanium, a 1N4001 for a 1N4148), LEDs within 0.3V, and any 1A diode for another. <strong>Loose</strong> offers any diode or LED, and says whether it will clip earlier or later. A small signal diode offered for a 1A diode is flagged as fine for clipping but not for power protection or a charge pump. As a power indicator, any colour of LED works.</p>
     <p>Diode voltages are typical at the small currents in a pedal, not datasheet figures, and two diodes of the same type can differ, germanium most of all. Clipping diodes are worth socketing so you can try them by ear.</p>
+
+    <h3 id="transistors">Transistors</h3>
+    <p>A transistor swap starts with its type. NPN never stands in for PNP, and a bipolar transistor never for a JFET or MOSFET: the circuit would need rebuilding. Within a type, what matters depends on the transistor's job:</p>
+    <ul>
+      <li><strong>Fuzz and boost stages</strong>: gain (hFE) shapes how much it distorts and how loud it is, and germanium fuzzes are biased for their transistors.</li>
+      <li><strong>Buffers, switching and LED drivers</strong>: almost any transistor of the same type works.</li>
+      <li><strong>JFET boosts and buffers</strong>: biased for the JFET's pinch-off voltage. After a swap, set the drain to about half the supply with the trimmer, or change the source or drain resistor.</li>
+    </ul>
+    <p>PedalStock knows the common pedal transistors:</p>
+    <ul>
+      <li><strong>Silicon NPN</strong>: 2N3904, 2N2222, 2N4401, 2N5088, 2N5089, 2N5210, 2N5133, MPSA18, BC546–BC550, BC337, BC107–BC109, 2SC1815, 2SC828, and the MPSA13/14 Darlingtons.</li>
+      <li><strong>Silicon PNP</strong>: 2N3906, 2N2907, 2N4403, 2N5087, BC556–BC560, BC327, 2SA1015, and the MPSA63/64 Darlingtons.</li>
+      <li><strong>Germanium</strong>: AC128, NKT275, OC44, OC71, OC81, 2N404, 2N527, 2N1305, AC125, AC188, GT308, MP42, AC127, AC187 and 2N1306.</li>
+      <li><strong>JFETs</strong>: J201, J111–J113, 2N5457, 2N5458, MPF102, BF245, 2SK30A and 2N3819.</li>
+      <li><strong>MOSFETs</strong>: BS170 and 2N7000.</li>
+    </ul>
+    <p>It reads gain grades from the part number (BC547B is 200–450, 2SC1815GR 200–400). If you measure your transistors, write it in the name or notes, like <code>hFE 85</code>, and it's used instead. Within 15% counts as a match, which helps when picking germanium for a fuzz.</p>
+    <p>Suggestions say what changes. A different gain means more or less output and distortion in a fuzz or boost. A different pinch-off means re-biasing. A different pinout says how to fit it: "turn it around" when it's the same order reversed (EBC for CBE, or a 2N7000 for a BS170), "cross the legs" otherwise (EBC for ECB). Where a pinout isn't certain, as with metal cans, germanium and some JFETs, it says to check it against the layout.</p>
+    <p><strong>Tight</strong> offers the same type with overlapping gain or pinch-off. <strong>Standard</strong> offers any transistor of the same type and material. <strong>Loose</strong> adds germanium for silicon or the reverse, and Darlingtons for ordinary transistors, both flagged as needing different bias. Pinouts vary between makers' versions of the same part, so check the datasheet of the one you have.</p>
 
     <h3>Charge pumps</h3>
     <p>The 7660-style charge pumps that make −9V or 18V in a pedal share one pinout: ICL7660, ICL7660S, TC7660, TC7660S, TC1044S, MAX1044, LTC1044, LTC1144 and MAX660. What differs is the highest supply each takes, so PedalStock offers the highest-rated first and says when one tops out at 9V or 10V and can't run from a 12V supply. The MAX660 is rated to 5.5V and can't run a 9V pedal at all. Ratings vary between makers' versions, so check the datasheet for anything above 9V.</p>
