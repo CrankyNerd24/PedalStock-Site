@@ -170,7 +170,7 @@
     <p>Tap a shortage to use a part you already have instead (see <a href="#substitutes">substitutes</a>).</p>
 
     <h2 id="substitutes">11. Substitutes</h2>
-    <p>When a resistor or capacitor is short, PedalStock suggests parts you have that will do the job, best first:</p>
+    <p>When a resistor, capacitor or <a href="#opamps">op-amp</a> is short, PedalStock suggests parts you have that will do the job. For resistors and capacitors, best first:</p>
     <ol>
       <li><strong>The same value</strong> in another part: a capacitor of an interchangeable type (box film, greenies and other film first for most values, ceramic or silver mica first below 1nF), or the same cap with a higher voltage rating.</li>
       <li><strong>A nearby value within tolerance</strong>, closest first: a 10.2k for a 10k, a 47 nF for a 50 nF.</li>
@@ -184,7 +184,9 @@
     </ul>
     <p>A value a few percent off moves the gain or frequency it sets by about the same few percent, which you'll rarely hear. Stay tight on parts that set a frequency you care about, like tone stacks and LFO timing. Capacitor substitutes always keep the voltage rating at or above the original's, and never put a polarized cap (electrolytic or tantalum) where a non-polarized one goes; a film cap can stand in for an electrolytic, and a bipolar cap for either polarized kind.</p>
     <p>A short part on a build shows a one-tap <strong>Use … instead</strong> suggestion when you have enough of a substitute, and each part page lists what can stand in for it. Two-part substitutes put both parts on the build, so a 10k needed twice becomes four 20k resistors. Two parts in series sit end to end in one part's place (stand them up, or bridge the holes on vero); in parallel they share the same two holes.</p>
-    <p>From Build Shortages, or by tapping a part's name on a build, you can pick any part as the replacement. That includes ICs and transistors (a TL062 for a TL072), parts you have none of, or a new part. You choose which builds the swap applies to, and a note is added to each build.</p>
+    <h3 id="opamps">Op-amps</h3>
+    <p>Op-amps with the same package and pinout drop into each other's sockets, so PedalStock suggests them too. It knows the common single (TL071, TL081, OPA134, NE5534…), dual (TL072, TL082, 4558, NE5532, OPA2134, LM358…) and quad (TL074, TL084, LM324…) chips under any maker's prefix or package suffix, so JRC4558D, RC4558P and NJM4558 are all the 4558. The same chip under another number comes first, then chips with the same kind of inputs (JFET or bipolar), then the rest, with a note where a swap needs care: the LM358's crossover distortion, the NE5534's compensation pins, the TL06x's low power. Each op-amp sounds a little different, which is why a socket is worth fitting. Search an op-amp, like <code>TL072</code>, to see every chip you have that fits its socket.</p>
+    <p>From Build Shortages, or by tapping a part's name on a build, you can pick any part as the replacement. That includes other ICs and transistors, parts you have none of, or a new part. You choose which builds the swap applies to, and a note is added to each build.</p>
 
 
     <h2 id="moving">12. Backups and moving your data</h2>
