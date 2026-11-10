@@ -170,7 +170,7 @@
     <p>Tap a shortage to use a part you already have instead (see <a href="#substitutes">substitutes</a>).</p>
 
     <h2 id="substitutes">11. Substitutes</h2>
-    <p>When a resistor, capacitor or <a href="#opamps">op-amp</a> is short, PedalStock suggests parts you have that will do the job. For resistors and capacitors, best first:</p>
+    <p>When a resistor, capacitor, <a href="#pots">pot</a>, <a href="#opamps">op-amp</a> or <a href="#opamps">charge pump</a> is short, PedalStock suggests parts you have that will do the job. For resistors and capacitors, best first:</p>
     <ol>
       <li><strong>The same value</strong> in another part: a capacitor of an interchangeable type (box film, greenies and other film first for most values, ceramic or silver mica first below 1nF), or the same cap with a higher voltage rating.</li>
       <li><strong>A nearby value within tolerance</strong>, closest first: a 10.2k for a 10k, a 47 nF for a 50 nF.</li>
@@ -178,14 +178,21 @@
     </ol>
     <p>The <strong>tolerance</strong> sets how close is close enough, and you choose it under Substitutes on any resistor or capacitor:</p>
     <ul>
-      <li><strong>Tight</strong>: resistors within 1%, film, ceramic and mica caps within 5%, electrolytics within 10%.</li>
-      <li><strong>Standard</strong> (the default): 5%, 10% and 20%, about what the parts themselves are rated to.</li>
-      <li><strong>Loose</strong>: 10%, 20% and 50%.</li>
+      <li><strong>Tight</strong>: resistors within 1%; film, ceramic and mica caps within 5% or ±1 pF; electrolytics within 10%; pots within 10%.</li>
+      <li><strong>Standard</strong> (the default): resistors 5%; caps 10% or ±2 pF; electrolytics 20%; pots 20%. About what the parts themselves are rated to.</li>
+      <li><strong>Loose</strong>: resistors 10%; caps 20% or ±5 pF; electrolytics 50%; pots 30%, and pots of another taper.</li>
     </ul>
+    <p>Small caps get whichever is wider, the percentage or the pF, because a percentage of a tiny value is smaller than any real difference: at Standard a 12p can stand in for a 10p, and a 20p for a 22p. Caps that small usually set a treble cutoff or keep a stage stable, and a couple of pF either way won't be heard.</p>
     <p>A value a few percent off moves the gain or frequency it sets by about the same few percent, which you'll rarely hear. Stay tight on parts that set a frequency you care about, like tone stacks and LFO timing. Capacitor substitutes always keep the voltage rating at or above the original's, and never put a polarized cap (electrolytic or tantalum) where a non-polarized one goes; a film cap can stand in for an electrolytic, and a bipolar cap for either polarized kind.</p>
     <p>A short part on a build shows a one-tap <strong>Use … instead</strong> suggestion when you have enough of a substitute, and each part page lists what can stand in for it. Two-part substitutes put both parts on the build, so a 10k needed twice becomes four 20k resistors. Two parts in series sit end to end in one part's place (stand them up, or bridge the holes on vero); in parallel they share the same two holes.</p>
     <h3 id="opamps">Op-amps</h3>
     <p>Op-amps with the same package and pinout drop into each other's sockets, so PedalStock suggests them too. It knows the common single (TL071, TL081, OPA134, NE5534…), dual (TL072, TL082, 4558, NE5532, OPA2134, LM358…) and quad (TL074, TL084, LM324…) chips under any maker's prefix or package suffix, so JRC4558D, RC4558P and NJM4558 are all the 4558. The same chip under another number comes first, then chips with the same kind of inputs (JFET or bipolar), then the rest, with a note where a swap needs care: the LM358's crossover distortion, the NE5534's compensation pins, the TL06x's low power. Each op-amp sounds a little different, which is why a socket is worth fitting. Search an op-amp, like <code>TL072</code>, to see every chip you have that fits its socket.</p>
+    <h3>Charge pumps</h3>
+    <p>The 7660-style charge pumps that make −9V or 18V in a pedal share one pinout: ICL7660, ICL7660S, TC7660, TC7660S, TC1044S, MAX1044, LTC1044, LTC1144 and MAX660. What differs is the highest supply each takes, so PedalStock offers the highest-rated first and says when one tops out at 9V or 10V and can't run from a 12V supply. The MAX660 is rated to 5.5V and can't run a 9V pedal at all. Ratings vary between makers' versions, so check the datasheet for anything above 9V.</p>
+
+    <h3 id="pots">Pots</h3>
+    <p>PedalStock reads a pot's value and taper however it's written (<code>B100k</code>, <code>100kB</code>, <code>100k lin</code>, <code>A500k log</code>), and whether it's dual-gang, a trimmer, or a given size like <code>16mm</code>, from its value, name or notes. It suggests pots of the same taper within the pot tolerance: pots are rated ±20% themselves, so a B470k and a B500k are the same pot in practice. A dual-gang pot can stand in for a single (wire up one gang), never the other way round, and a trimmer only for a trimmer. A different size gets a note to check it fits. Pots of another taper are offered only at Loose, since log, linear and reverse log make the knob sweep differently.</p>
+
     <p>From Build Shortages, or by tapping a part's name on a build, you can pick any part as the replacement. That includes other ICs and transistors, parts you have none of, or a new part. You choose which builds the swap applies to, and a note is added to each build.</p>
 
 
