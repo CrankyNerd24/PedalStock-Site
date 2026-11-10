@@ -146,7 +146,7 @@ h1 { font: 700 clamp(38px, 6vw, 60px)/1.04 var(--font-display); letter-spacing: 
 /* Footer */
 .site-footer { padding-block: 28px 40px; border-top: 1px solid var(--card-border); color: var(--text-secondary); font-size: 14px; }
 .site-footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.site-footer nav { display: flex; gap: 20px; }
+.site-footer nav { display: flex; gap: 8px 20px; flex-wrap: wrap; }
 .site-footer a { color: var(--text-secondary); }
 
 @media (max-width: 820px) {
