@@ -73,8 +73,8 @@
     <p>Values are read the way builders write them, so <code>4k7</code>, <code>4.7k</code> and <code>4.7kΩ</code> are the same resistor, and <code>1K ohm</code> finds a part saved as <code>1k</code>.</p>
 
     <h3>Finding parts</h3>
-    <p>Inventory is grouped by category. Every section starts collapsed: tap a heading to open it. Searching opens every section so no match is hidden. Search looks at names, and for capacitors at every unit, so <code>22nF</code> finds a part saved as <code>0.022uF</code>.</p>
-    <p>A <span style="color:var(--warning)">▲</span> next to a part means its quantity is at or below its threshold. Tap a part to see its details, the builds it's used in and, for capacitors, its <a href="#substitutes">substitutes</a>. Long lists have a back-to-top button at the bottom right.</p>
+    <p>Inventory is grouped by category. Every section starts collapsed: tap a heading to open it. Searching opens every section so no match is hidden. Search understands values however they're written: <code>4k7</code>, <code>4.7k</code> and <code>4.7k ohm</code> find the same resistor, and <code>22nF</code> finds a cap saved as <code>0.022uF</code>. Every word has to match, so <code>100n film</code> finds only film caps at 100 nF, <code>25v</code> caps rated 25V, and <code>caps</code> or <code>pots</code> a whole category. Search for a resistor or capacitor value you don't have, like <code>5k</code>, and the closest values you do have are listed below with how far off they are.</p>
+    <p>A <span style="color:var(--warning)">▲</span> next to a part means its quantity is at or below its threshold. Tap a part to see its details, the builds it's used in and, for resistors and capacitors, its <a href="#substitutes">substitutes</a>. Long lists have a back-to-top button at the bottom right.</p>
 
     <h3 id="import-inventory">Importing and exporting inventory</h3>
     <p>On the Inventory tab, use <strong>Import CSV…</strong> or <strong>Export CSV</strong>.</p>
@@ -83,7 +83,7 @@
 
     <h2 id="capacitors">3. Capacitors</h2>
     <p>Capacitor rows show the value in its most natural unit as the title, such as "22 nF Ceramic", with the same value in the other units underneath (<code>0.022 µF · 22000 pF</code>). They're sorted smallest first, then by voltage, so your 10µF electrolytics line up 16V, 25V, 50V.</p>
-    <p>Each capacitor has a <strong>type</strong>: Film Box, Greenie, Film, Ceramic, Silver Mica, Polarized, Tantalum, Electrolytic or Other. Types matter for <a href="#substitutes">substitutes</a>. Film types and ceramics can stand in for each other, but electrolytic, tantalum and polarized caps are never suggested as swaps for anything else. If a part's type is Other and its name says "box film", "greenie", "MLCC" and so on, PedalStock fills the type in from the name.</p>
+    <p>Each capacitor has a <strong>type</strong>: Film Box, Greenie, Film, Ceramic, Silver Mica, Polarized, Tantalum, Electrolytic or Other. Types matter for <a href="#substitutes">substitutes</a>. Film types and ceramics can stand in for each other, and a film cap can take an electrolytic's place, but electrolytic and tantalum caps are never suggested for a film, ceramic or bipolar spot. If a part's type is Other and its name says "box film", "greenie", "MLCC" and so on, PedalStock fills the type in from the name.</p>
     <p>The <strong>voltage rating</strong> is shown in Build Shortages and on build pages, so you can tell a 16V cap from a 25V one at a glance. Parts with the same value but different voltages are treated as different parts.</p>
 
     <h2 id="duplicates">4. Duplicate parts</h2>
@@ -170,7 +170,20 @@
     <p>Tap a shortage to use a part you already have instead (see <a href="#substitutes">substitutes</a>).</p>
 
     <h2 id="substitutes">11. Substitutes</h2>
-    <p>When a part is short, PedalStock can suggest one you have that will do the job. For capacitors, that's the same value in an interchangeable type: box film, greenies and other film first for most values, and ceramic or silver mica first below 1nF. Electrolytic, tantalum and polarized caps are never swapped. A short part on a build shows a one-tap <strong>Use … instead</strong> suggestion when you have enough of an interchangeable part, and a capacitor's part page lists its substitutes, best first.</p>
+    <p>When a resistor or capacitor is short, PedalStock suggests parts you have that will do the job, best first:</p>
+    <ol>
+      <li><strong>The same value</strong> in another part: a capacitor of an interchangeable type (box film, greenies and other film first for most values, ceramic or silver mica first below 1nF), or the same cap with a higher voltage rating.</li>
+      <li><strong>A nearby value within tolerance</strong>, closest first: a 10.2k for a 10k, a 47 nF for a 50 nF.</li>
+      <li><strong>Two parts together</strong>: resistors in series (4.7k + 5.6k for 10k) or two equal ones in parallel (2 × 20k for 10k); capacitors in parallel (2 × 47 nF for 100 nF) or two equal ones in series.</li>
+    </ol>
+    <p>The <strong>tolerance</strong> sets how close is close enough, and you choose it under Substitutes on any resistor or capacitor:</p>
+    <ul>
+      <li><strong>Tight</strong>: resistors within 1%, film, ceramic and mica caps within 5%, electrolytics within 10%.</li>
+      <li><strong>Standard</strong> (the default): 5%, 10% and 20%, about what the parts themselves are rated to.</li>
+      <li><strong>Loose</strong>: 10%, 20% and 50%.</li>
+    </ul>
+    <p>A value a few percent off moves the gain or frequency it sets by about the same few percent, which you'll rarely hear. Stay tight on parts that set a frequency you care about, like tone stacks and LFO timing. Capacitor substitutes always keep the voltage rating at or above the original's, and never put a polarized cap (electrolytic or tantalum) where a non-polarized one goes; a film cap can stand in for an electrolytic, and a bipolar cap for either polarized kind.</p>
+    <p>A short part on a build shows a one-tap <strong>Use … instead</strong> suggestion when you have enough of a substitute, and each part page lists what can stand in for it. Two-part substitutes put both parts on the build, so a 10k needed twice becomes four 20k resistors. Two parts in series sit end to end in one part's place (stand them up, or bridge the holes on vero); in parallel they share the same two holes.</p>
     <p>From Build Shortages, or by tapping a part's name on a build, you can pick any part as the replacement. That includes ICs and transistors (a TL062 for a TL072), parts you have none of, or a new part. You choose which builds the swap applies to, and a note is added to each build.</p>
 
 
